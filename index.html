@@ -1,0 +1,661 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <!-- SEO Meta Tags -->
+  <title>Lumina Dental Care | Gentle, Premium Family Dentistry</title>
+  <meta name="description" content="Experience modern, anxiety-free dental care at Lumina Dental Care. Led by Dr. Evelyn Stone, DDS, we combine advanced comfort technology with personalized, gentle care. Book online today.">
+  <meta name="keywords" content="dentist, dental care, gentle dentist, Lumina Dental Care, Dr. Evelyn Stone, cosmetic dentistry, preventative care, restorative dental, emergency dentist">
+  <meta name="author" content="Lumina Dental Care">
+  
+  <!-- Open Graph / Social Media -->
+  <meta property="og:title" content="Lumina Dental Care | Gentle, Premium Dentistry">
+  <meta property="og:description" content="Modern, anxiety-free dental care with Dr. Evelyn Stone, DDS. Relax in our state-of-the-art office.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.luminadental.com">
+  
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              cream: '#FDFBF7',
+              navy: '#0F172A',
+              teal: '#0D9488',
+              mint: '#14B8A6',
+              softTeal: '#F0FDFA',
+              slate: '#475569',
+            }
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Local Custom Stylesheet -->
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="bg-brand-cream text-brand-navy selection:bg-brand-teal selection:text-white antialiased min-h-screen flex flex-col">
+
+  <!-- Navigation Bar -->
+  <header class="fixed top-0 left-0 w-full z-40 glass-nav transition-all duration-300">
+    <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+      <!-- Logo and Practice Name -->
+      <a href="#" class="flex items-center gap-3 group" aria-label="Lumina Dental Care Home">
+        <div class="bg-gradient-to-tr from-brand-teal to-brand-mint text-white p-2.5 rounded-xl shadow-md group-hover:scale-105 transition-transform duration-300">
+          <!-- Dental SVG Icon -->
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364-6.364l-.707.707M6.343 17.657l-.707.707m0-12.728l.707.707m12.728 12.728l.707-.707M12 8a4 4 0 100 8 4 4 0 000-8z"></path>
+          </svg>
+        </div>
+        <div class="flex flex-col">
+          <span class="text-xl font-bold tracking-tight text-brand-navy leading-none">Lumina</span>
+          <span class="text-xs font-semibold tracking-widest text-brand-teal uppercase mt-0.5">Dental Care</span>
+        </div>
+      </a>
+
+      <!-- Desktop Navigation Links -->
+      <nav class="hidden md:flex items-center gap-8" aria-label="Main Navigation">
+        <a href="#services" class="text-brand-slate hover:text-brand-teal text-sm font-medium transition-colors duration-300">Services</a>
+        <a href="#about" class="text-brand-slate hover:text-brand-teal text-sm font-medium transition-colors duration-300">About & Technology</a>
+        <a href="#testimonials" class="text-brand-slate hover:text-brand-teal text-sm font-medium transition-colors duration-300">Patient Testimonials</a>
+        <a href="#contact" class="text-brand-slate hover:text-brand-teal text-sm font-medium transition-colors duration-300">Contact Us</a>
+      </nav>
+
+      <!-- Desktop Navigation CTA -->
+      <div class="hidden md:block">
+        <a href="#contact" class="bg-brand-teal hover:bg-teal-700 text-white text-sm font-medium px-5 py-2.5 rounded-full shadow-sm hover:shadow-md transition-all duration-300 transform hover:-translate-y-0.5" id="nav-booking-cta">
+          Book Appointment
+        </a>
+      </div>
+
+      <!-- Mobile Menu Button -->
+      <button class="md:hidden flex items-center justify-center p-2 rounded-lg hover:bg-slate-100 text-brand-navy focus:outline-none" id="mobile-menu-btn" aria-expanded="false" aria-label="Toggle Navigation Menu">
+        <!-- Menu Hamburger Icon -->
+        <svg class="w-6 h-6" id="menu-icon-open" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M4 6h16M4 12h16M4 18h16"></path>
+        </svg>
+        <!-- Menu Close X Icon -->
+        <svg class="w-6 h-6 hidden" id="menu-icon-close" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M6 18L18 6M6 6l12 12"></path>
+        </svg>
+      </button>
+    </div>
+
+    <!-- Mobile Menu Drawer -->
+    <div class="hidden md:hidden flex-col bg-white border-b border-slate-100 p-6 absolute top-20 left-0 w-full animate-fade-in" id="mobile-menu" aria-label="Mobile Navigation">
+      <nav class="flex flex-col gap-4 mb-6">
+        <a href="#services" class="text-brand-slate text-lg font-medium hover:text-brand-teal py-2 border-b border-slate-50">Services</a>
+        <a href="#about" class="text-brand-slate text-lg font-medium hover:text-brand-teal py-2 border-b border-slate-50">About & Technology</a>
+        <a href="#testimonials" class="text-brand-slate text-lg font-medium hover:text-brand-teal py-2 border-b border-slate-50">Patient Testimonials</a>
+        <a href="#contact" class="text-brand-slate text-lg font-medium hover:text-brand-teal py-2">Contact Us</a>
+      </nav>
+      <a href="#contact" class="bg-brand-teal hover:bg-teal-700 text-white text-center font-medium py-3 rounded-xl shadow-sm block transition-colors duration-300">
+        Book Appointment
+      </a>
+    </div>
+  </header>
+
+  <main class="flex-grow pt-20">
+    <!-- Hero Section -->
+    <section class="max-w-7xl mx-auto px-6 py-12 md:py-24 flex flex-col md:flex-row items-center gap-12 md:gap-16" id="hero">
+      <!-- Left Column: Copy -->
+      <div class="flex-1 space-y-8 animate-fade-in-up">
+        <!-- Badge -->
+        <span class="inline-flex items-center gap-1.5 bg-brand-softTeal text-brand-teal text-sm font-semibold px-4 py-1.5 rounded-full border border-teal-100/60 shadow-sm animate-pulse-soft">
+          <span class="w-2 h-2 rounded-full bg-brand-mint"></span>
+          Now Accepting New Patients
+        </span>
+
+        <!-- Headline -->
+        <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-brand-navy leading-tight">
+          A Healthier, Brighter Smile Begins with <span class="text-brand-teal bg-gradient-to-r from-brand-teal to-brand-mint bg-clip-text text-transparent">Personalized, Gentle Care</span>.
+        </h1>
+
+        <!-- Subheadline -->
+        <p class="text-lg text-brand-slate font-light leading-relaxed max-w-xl">
+          Welcome to <strong class="font-semibold text-brand-navy">Lumina Dental Care</strong>. We combine state-of-the-art dental technology with a comforting, anxiety-reducing environment to keep your smile radiant.
+        </p>
+
+        <!-- CTA Buttons -->
+        <div class="flex flex-col sm:flex-row gap-4">
+          <a href="#contact" class="bg-brand-teal hover:bg-teal-700 text-white text-center font-semibold px-8 py-4 rounded-xl shadow-md hover:shadow-lg hover:-translate-y-0.5 transition-all duration-300" id="hero-primary-cta">
+            Schedule Online Now
+          </a>
+          <a href="#services" class="border-2 border-slate-200 hover:border-brand-teal text-brand-navy hover:text-brand-teal text-center font-semibold px-8 py-4 rounded-xl hover:-translate-y-0.5 transition-all duration-300" id="hero-secondary-cta">
+            Explore Our Services
+          </a>
+        </div>
+
+        <!-- Trust Badges -->
+        <div class="pt-6 border-t border-slate-100 flex flex-wrap gap-8 items-center">
+          <div class="flex items-center gap-3">
+            <div class="flex text-amber-400" aria-hidden="true">
+              <!-- Rating Stars -->
+              <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+              <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+              <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+              <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+              <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+            </div>
+            <div>
+              <span class="text-sm font-semibold text-brand-navy block leading-none">5-Star Patient Rating</span>
+              <span class="text-xs text-brand-slate">Based on 250+ reviews</span>
+            </div>
+          </div>
+          <div class="h-6 w-px bg-slate-200 hidden sm:block"></div>
+          <div class="flex items-center gap-2 text-brand-slate text-sm">
+            <svg class="w-5 h-5 text-brand-teal" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path>
+            </svg>
+            <span>State-of-the-Art Care</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right Column: Visual / Illustration -->
+      <div class="flex-1 w-full max-w-lg md:max-w-none animate-fade-in delay-200">
+        <div class="relative">
+          <!-- Background decoration -->
+          <div class="absolute -inset-1.5 bg-gradient-to-tr from-brand-teal to-brand-mint rounded-3xl blur opacity-25"></div>
+          <!-- Calming Dental Lobby Image -->
+          <img src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&q=80&w=1200" alt="Beautifully clean and calming modern dental clinic treatment area with natural lighting" class="relative rounded-3xl shadow-xl w-full object-cover aspect-[4/3]">
+        </div>
+      </div>
+    </section>
+
+    <!-- Our Services (Bento Grid) -->
+    <section class="bg-white border-y border-slate-100 py-20" id="services">
+      <div class="max-w-7xl mx-auto px-6">
+        
+        <!-- Header -->
+        <div class="text-center max-w-2xl mx-auto mb-16 space-y-4">
+          <span class="text-xs font-semibold tracking-widest text-brand-teal uppercase">Specialized Dental Care</span>
+          <h2 class="text-3xl md:text-4xl font-extrabold tracking-tight text-brand-navy">
+            Our Dental Offerings
+          </h2>
+          <p class="text-brand-slate font-light">
+            We focus on preventative treatments, comfortable restoratives, and stunning cosmetic upgrades in a tranquil environment.
+          </p>
+        </div>
+
+        <!-- Bento Asymmetric Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-6 gap-6">
+          
+          <!-- Preventative Care (Card 1: 3-column span) -->
+          <div class="bento-card md:col-span-3 bg-gradient-to-br from-teal-50/40 via-teal-50/10 to-brand-cream border border-slate-100 rounded-3xl p-8 md:p-10 flex flex-col justify-between group">
+            <div class="space-y-6">
+              <!-- Icon Container -->
+              <div class="w-14 h-14 rounded-2xl bg-white border border-teal-100 flex items-center justify-center text-brand-teal shadow-sm group-hover:scale-105 transition-transform duration-300">
+                <!-- Tooth Brush SVG -->
+                <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1"></path>
+                </svg>
+              </div>
+              <div class="space-y-3">
+                <h3 class="text-2xl font-bold text-brand-navy">Preventative Care</h3>
+                <p class="text-brand-slate font-light leading-relaxed">
+                  Keeping your natural smile healthy is our main priority. We provide thorough diagnostic checkups, low-radiation x-rays, and painless professional cleanings.
+                </p>
+              </div>
+            </div>
+            <!-- Bullet Highlights -->
+            <div class="mt-8 pt-6 border-t border-slate-100/60 flex flex-wrap gap-x-6 gap-y-2 text-sm text-brand-teal font-medium">
+              <span class="flex items-center gap-1.5"><span class="w-1.5 h-1.5 rounded-full bg-brand-mint"></span> Regular Cleanings</span>
+              <span class="flex items-center gap-1.5"><span class="w-1.5 h-1.5 rounded-full bg-brand-mint"></span> Low-Rad X-Rays</span>
+              <span class="flex items-center gap-1.5"><span class="w-1.5 h-1.5 rounded-full bg-brand-mint"></span> Oral Exams</span>
+            </div>
+          </div>
+
+          <!-- Cosmetic Dentistry (Card 2: 3-column span) -->
+          <div class="bento-card md:col-span-3 bg-gradient-to-br from-teal-50/40 via-teal-50/10 to-brand-cream border border-slate-100 rounded-3xl p-8 md:p-10 flex flex-col justify-between group">
+            <div class="space-y-6">
+              <div class="w-14 h-14 rounded-2xl bg-white border border-teal-100 flex items-center justify-center text-brand-teal shadow-sm group-hover:scale-105 transition-transform duration-300">
+                <!-- Sparkles SVG -->
+                <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"></path>
+                </svg>
+              </div>
+              <div class="space-y-3">
+                <h3 class="text-2xl font-bold text-brand-navy">Cosmetic Dentistry</h3>
+                <p class="text-brand-slate font-light leading-relaxed">
+                  Design the smile you've always wanted. We offer aesthetic, tailored solutions, including clinical-grade teeth whitening and durable porcelain veneers.
+                </p>
+              </div>
+            </div>
+            <div class="mt-8 pt-6 border-t border-slate-100/60 flex flex-wrap gap-x-6 gap-y-2 text-sm text-brand-teal font-medium">
+              <span class="flex items-center gap-1.5"><span class="w-1.5 h-1.5 rounded-full bg-brand-mint"></span> Laser Whitening</span>
+              <span class="flex items-center gap-1.5"><span class="w-1.5 h-1.5 rounded-full bg-brand-mint"></span> Porcelain Veneers</span>
+              <span class="flex items-center gap-1.5"><span class="w-1.5 h-1.5 rounded-full bg-brand-mint"></span> Smile Makeovers</span>
+            </div>
+          </div>
+
+          <!-- Restorative Services (Card 3: 4-column span) -->
+          <div class="bento-card md:col-span-4 bg-gradient-to-br from-slate-50 to-brand-cream border border-slate-100 rounded-3xl p-8 md:p-10 flex flex-col justify-between group">
+            <div class="space-y-6">
+              <div class="w-14 h-14 rounded-2xl bg-white border border-slate-100 flex items-center justify-center text-brand-teal shadow-sm group-hover:scale-105 transition-transform duration-300">
+                <!-- Shield SVG -->
+                <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path>
+                </svg>
+              </div>
+              <div class="space-y-3">
+                <h3 class="text-2xl font-bold text-brand-navy">Restorative Dentistry</h3>
+                <p class="text-brand-slate font-light leading-relaxed">
+                  Restore strength and function safely. We construct natural-looking composite inlays, high-grade crowns, and dental implants to bring back complete bite comfort and speech alignment.
+                </p>
+              </div>
+            </div>
+            <div class="mt-8 pt-6 border-t border-slate-100/60 flex flex-wrap gap-x-6 gap-y-2 text-sm text-brand-teal font-medium">
+              <span class="flex items-center gap-1.5"><span class="w-1.5 h-1.5 rounded-full bg-brand-mint"></span> Inlays & Fillings</span>
+              <span class="flex items-center gap-1.5"><span class="w-1.5 h-1.5 rounded-full bg-brand-mint"></span> Ceramic Crowns</span>
+              <span class="flex items-center gap-1.5"><span class="w-1.5 h-1.5 rounded-full bg-brand-mint"></span> Dental Implants</span>
+            </div>
+          </div>
+
+          <!-- Emergency Care (Card 4: 2-column span with accent color background) -->
+          <div class="bento-card md:col-span-2 bg-gradient-to-br from-brand-teal to-teal-800 text-white rounded-3xl p-8 flex flex-col justify-between group">
+            <div class="space-y-6">
+              <div class="w-12 h-12 rounded-xl bg-white/10 flex items-center justify-center text-teal-100 shadow-sm group-hover:scale-105 transition-transform duration-300">
+                <!-- Clock/Alert SVG -->
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                </svg>
+              </div>
+              <div class="space-y-2">
+                <h3 class="text-2xl font-bold">Emergency Care</h3>
+                <p class="text-teal-50 text-sm font-light leading-relaxed">
+                  Suffering from sudden dental pain or injury? We reserve daily slots for same-day emergency appointments.
+                </p>
+              </div>
+            </div>
+            <div class="mt-6 pt-4 border-t border-white/10">
+              <a href="tel:+18005553368" class="inline-flex items-center gap-2 text-white hover:text-teal-200 font-semibold transition-colors duration-300">
+                <span>Call (800) 555-DENT</span>
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+              </a>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- About Dr. Stone & Advanced Technology -->
+    <section class="max-w-7xl mx-auto px-6 py-20" id="about">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
+        
+        <!-- Left Side: Bio -->
+        <div class="lg:col-span-6 space-y-8">
+          <div class="space-y-4">
+            <span class="text-xs font-semibold tracking-widest text-brand-teal uppercase">Meet Your Dentist</span>
+            <h2 class="text-3xl md:text-4xl font-extrabold tracking-tight text-brand-navy">
+              Dr. Evelyn Stone, DDS
+            </h2>
+          </div>
+          
+          <div class="relative w-full max-w-md">
+            <div class="absolute -inset-1.5 bg-gradient-to-tr from-brand-teal to-brand-mint rounded-3xl blur opacity-20"></div>
+            <!-- Portrait Image -->
+            <img src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?auto=format&fit=crop&q=80&w=800" alt="Dr. Evelyn Stone, DDS smiling warmly in front of clinical office background" class="relative rounded-3xl shadow-lg w-full object-cover aspect-[4/4]">
+          </div>
+
+          <div class="space-y-4 text-brand-slate font-light leading-relaxed">
+            <p>
+              Dr. Evelyn Stone completed her dental training at <strong class="font-semibold text-brand-navy">Columbia University School of Dental Medicine</strong> and has spent over 12 years perfecting gentle dentistry techniques. Her mission is to dispel clinical anxiety and make dental visits comfortable, educational, and relaxing.
+            </p>
+            <p>
+              "We understand that visiting the dentist can feel stressful. That's why we build clinical trust, explain every procedure, and use soft techniques so you can look forward to a healthy, confident smile."
+            </p>
+          </div>
+        </div>
+
+        <!-- Right Side: Advanced Tech -->
+        <div class="lg:col-span-6 space-y-10">
+          <div class="space-y-4">
+            <span class="text-xs font-semibold tracking-widest text-brand-teal uppercase">Anxiety-Reducing Technology</span>
+            <h2 class="text-3xl font-extrabold tracking-tight text-brand-navy">
+              Advanced Technology Designed For Comfort
+            </h2>
+            <p class="text-brand-slate font-light leading-relaxed">
+              We leverage modern technology not only for diagnostic precision but to ensure a quick, painless experience.
+            </p>
+          </div>
+
+          <!-- Technology Badges/Cards Grid -->
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+            
+            <!-- Tech 1 -->
+            <div class="bg-white border border-slate-100 p-6 rounded-2xl shadow-sm space-y-3">
+              <div class="w-10 h-10 rounded-xl bg-teal-50 text-brand-teal flex items-center justify-center">
+                <!-- X-Ray icon -->
+                <svg class="w-5.5 h-5.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v1m0 14v1m9-9h-1M4 12H3m15.364-6.364l-.707.707M6.343 17.657l-.707.707m0-12.728l.707.707m12.728 12.728l.707-.707"></path></svg>
+              </div>
+              <h3 class="text-lg font-bold text-brand-navy">Digital X-Rays</h3>
+              <p class="text-xs text-brand-slate leading-relaxed font-light">
+                No uncomfortable plates inside your mouth. Offers immediate visualization and outputs 90% less radiation than legacy systems.
+              </p>
+            </div>
+
+            <!-- Tech 2 -->
+            <div class="bg-white border border-slate-100 p-6 rounded-2xl shadow-sm space-y-3">
+              <div class="w-10 h-10 rounded-xl bg-teal-50 text-brand-teal flex items-center justify-center">
+                <!-- Drop/Medicine icon -->
+                <svg class="w-5.5 h-5.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 9.172V5L8 4z"></path></svg>
+              </div>
+              <h3 class="text-lg font-bold text-brand-navy">Painless Anesthesia</h3>
+              <p class="text-xs text-brand-slate leading-relaxed font-light">
+                Our computer-guided local anesthetic delivery is nearly imperceptible, removing the anxiety and dread of traditional syringes.
+              </p>
+            </div>
+
+            <!-- Tech 3 -->
+            <div class="bg-white border border-slate-100 p-6 rounded-2xl shadow-sm space-y-3">
+              <div class="w-10 h-10 rounded-xl bg-teal-50 text-brand-teal flex items-center justify-center">
+                <!-- Video Camera icon -->
+                <svg class="w-5.5 h-5.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"></path></svg>
+              </div>
+              <h3 class="text-lg font-bold text-brand-navy">Intraoral Cameras</h3>
+              <p class="text-xs text-brand-slate leading-relaxed font-light">
+                High-definition tiny cameras let you see exactly what Dr. Stone sees on our chairside screens, supporting absolute dental transparency.
+              </p>
+            </div>
+
+            <!-- Tech 4 -->
+            <div class="bg-white border border-slate-100 p-6 rounded-2xl shadow-sm space-y-3">
+              <div class="w-10 h-10 rounded-xl bg-teal-50 text-brand-teal flex items-center justify-center">
+                <!-- Globe/3D icon -->
+                <svg class="w-5.5 h-5.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9"></path></svg>
+              </div>
+              <h3 class="text-lg font-bold text-brand-navy">3D Diagnostics</h3>
+              <p class="text-xs text-brand-slate leading-relaxed font-light">
+                Cone Beam CT scanning constructs complete 3D digital models of jaw tissues, maximizing implant success and root structure analysis.
+              </p>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Patient Testimonials -->
+    <section class="bg-white border-y border-slate-100 py-20" id="testimonials">
+      <div class="max-w-7xl mx-auto px-6">
+        
+        <!-- Header -->
+        <div class="text-center max-w-2xl mx-auto mb-16 space-y-4">
+          <span class="text-xs font-semibold tracking-widest text-brand-teal uppercase">Patient Stories</span>
+          <h2 class="text-3xl md:text-4xl font-extrabold tracking-tight text-brand-navy">
+            What Our Patients Say
+          </h2>
+        </div>
+
+        <!-- Slider Wrapper -->
+        <div class="max-w-4xl mx-auto relative px-12 md:px-16">
+          
+          <!-- Testimonial Content Container (Injected via app.js) -->
+          <div id="testimonial-container" class="transition-all duration-300 min-h-[250px] flex items-center justify-center">
+            <!-- JavaScript will render the slider items here -->
+          </div>
+
+          <!-- Controls -->
+          <button class="absolute left-0 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full border border-slate-200 flex items-center justify-center text-slate-500 hover:text-brand-teal hover:border-brand-teal bg-white shadow-sm hover:shadow transition-all duration-300" id="prev-testimonial" aria-label="Previous Testimonial">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M15 19l-7-7 7-7"></path></svg>
+          </button>
+          
+          <button class="absolute right-0 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full border border-slate-200 flex items-center justify-center text-slate-500 hover:text-brand-teal hover:border-brand-teal bg-white shadow-sm hover:shadow transition-all duration-300" id="next-testimonial" aria-label="Next Testimonial">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 5l7 7-7 7"></path></svg>
+          </button>
+
+          <!-- Dot Indicators -->
+          <div class="flex justify-center gap-2 mt-8" id="testimonial-dots">
+            <!-- Dots dynamically added by JS -->
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Appointment Booking & Contact Details -->
+    <section class="max-w-7xl mx-auto px-6 py-20" id="contact">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-stretch">
+        
+        <!-- Form Column (Bento Card Layout) -->
+        <div class="lg:col-span-7 bg-white border border-slate-100 rounded-3xl p-8 md:p-10 shadow-sm flex flex-col justify-between">
+          <div class="space-y-6">
+            <div class="space-y-2">
+              <h2 class="text-3xl font-extrabold tracking-tight text-brand-navy">Request an Appointment</h2>
+              <p class="text-sm text-brand-slate font-light">
+                Fill out the request details below. Our scheduling coordinator will follow up to finalize your slot.
+              </p>
+            </div>
+
+            <!-- Booking Form -->
+            <form id="booking-form" class="space-y-5">
+              
+              <!-- Patient Name -->
+              <div>
+                <label for="booking-name" class="block text-xs font-semibold text-brand-navy uppercase tracking-wider mb-2">Full Name</label>
+                <input type="text" id="booking-name" required placeholder="e.g. Johnathan Doe" class="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl text-brand-navy focus:border-brand-teal transition-all duration-300">
+              </div>
+
+              <!-- Contact Info -->
+              <div>
+                <label for="booking-contact" class="block text-xs font-semibold text-brand-navy uppercase tracking-wider mb-2">Email Address or Phone Number</label>
+                <input type="text" id="booking-contact" required placeholder="e.g. email@example.com or (555) 000-0000" class="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl text-brand-navy focus:border-brand-teal transition-all duration-300">
+              </div>
+
+              <!-- Service & Date/Time Row -->
+              <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                
+                <!-- Service Dropdown -->
+                <div class="md:col-span-1">
+                  <label for="booking-service" class="block text-xs font-semibold text-brand-navy uppercase tracking-wider mb-2">Needed Service</label>
+                  <select id="booking-service" required class="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl text-brand-navy focus:border-brand-teal transition-all duration-300">
+                    <option value="" disabled selected>Select service</option>
+                    <option value="Preventative Cleanings & Exams">Preventative Cleanings & Exams</option>
+                    <option value="Cosmetic Whitening & Veneers">Cosmetic Whitening & Veneers</option>
+                    <option value="Crowns, Implants, & Restorative">Restorative Care</option>
+                    <option value="Same-day Urgent/Emergency">Emergency Appointment</option>
+                  </select>
+                </div>
+
+                <!-- Preferred Date -->
+                <div class="md:col-span-1">
+                  <label for="booking-date" class="block text-xs font-semibold text-brand-navy uppercase tracking-wider mb-2">Preferred Date</label>
+                  <input type="date" id="booking-date" required class="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl text-brand-navy focus:border-brand-teal transition-all duration-300">
+                </div>
+
+                <!-- Preferred Time Window -->
+                <div class="md:col-span-1">
+                  <label for="booking-time" class="block text-xs font-semibold text-brand-navy uppercase tracking-wider mb-2">Preferred Time</label>
+                  <select id="booking-time" required class="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl text-brand-navy focus:border-brand-teal transition-all duration-300">
+                    <option value="" disabled selected>Select window</option>
+                    <option value="Morning (8:00 AM - 12:00 PM)">Morning (8:00 AM - 12:00 PM)</option>
+                    <option value="Afternoon (12:00 PM - 4:00 PM)">Afternoon (12:00 PM - 4:00 PM)</option>
+                    <option value="Late Afternoon (4:00 PM - 6:00 PM)">Late Afternoon (4:00 PM - 6:00 PM)</option>
+                  </select>
+                </div>
+
+              </div>
+
+              <!-- Submit CTA -->
+              <button type="submit" class="w-full bg-brand-teal hover:bg-teal-700 text-white font-semibold py-4 rounded-xl shadow-md hover:shadow-lg transition-all duration-300 transform hover:-translate-y-0.5 mt-2">
+                Submit Booking Request
+              </button>
+
+            </form>
+          </div>
+        </div>
+
+        <!-- Practice Info Column -->
+        <div class="lg:col-span-5 bg-gradient-to-br from-brand-navy to-slate-900 text-white rounded-3xl p-8 md:p-10 flex flex-col justify-between space-y-12">
+          
+          <!-- Clinic Details Header -->
+          <div class="space-y-4">
+            <span class="text-xs font-semibold tracking-widest text-teal-400 uppercase">Lumina Dental Care</span>
+            <h3 class="text-3xl font-extrabold tracking-tight">Practice Information</h3>
+            <p class="text-slate-300 text-sm font-light leading-relaxed">
+              We look forward to meeting you. Stop by our modern facility or call us directly with questions or scheduling adjustments.
+            </p>
+          </div>
+
+          <!-- Details list -->
+          <div class="space-y-6">
+            
+            <!-- Address -->
+            <div class="flex items-start gap-4">
+              <div class="w-10 h-10 rounded-xl bg-white/10 flex items-center justify-center text-teal-400 shrink-0">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
+              </div>
+              <div>
+                <span class="block text-xs font-bold text-teal-400 uppercase tracking-widest leading-none mb-1">Our Location</span>
+                <address class="not-italic text-sm text-slate-200">
+                  742 Evergreen Terrace, Suite 100<br>Springfield, OR 97477
+                </address>
+              </div>
+            </div>
+
+            <!-- Phone Number -->
+            <div class="flex items-start gap-4">
+              <div class="w-10 h-10 rounded-xl bg-white/10 flex items-center justify-center text-teal-400 shrink-0">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h2.28a1 1 0 01.99.86l.63 3.3a1 1 0 01-.27.83L6.5 8.3c.53.94 1.2 1.61 2.14 2.14l1.32-1.32a1 1 0 01.83-.27l3.3.63a1 1 0 01.86.99V15a2 2 0 01-2 2h-2C9.49 17 6 13.51 6 9.18v-2a2 2 0 012-2z"></path></svg>
+              </div>
+              <div>
+                <span class="block text-xs font-bold text-teal-400 uppercase tracking-widest leading-none mb-1">Call Us Directly</span>
+                <a href="tel:+18005553368" class="text-lg font-semibold text-white hover:text-teal-300 transition-colors duration-300">
+                  (800) 555-DENT
+                </a>
+              </div>
+            </div>
+
+            <!-- Operating Hours -->
+            <div class="flex items-start gap-4">
+              <div class="w-10 h-10 rounded-xl bg-white/10 flex items-center justify-center text-teal-400 shrink-0">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+              </div>
+              <div>
+                <span class="block text-xs font-bold text-teal-400 uppercase tracking-widest leading-none mb-1">Clinic Hours</span>
+                <ul class="text-sm text-slate-200 space-y-1">
+                  <li>Mon - Thu: 8:00 AM - 5:00 PM</li>
+                  <li>Friday: 8:00 AM - 2:00 PM</li>
+                  <li>Sat - Sun: Closed</li>
+                </ul>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- Bottom Notice -->
+          <div class="pt-6 border-t border-white/10 text-xs text-slate-400 leading-relaxed font-light">
+            Need emergency advice outside hours? Call our main line to get connected to Dr. Stone's on-call clinical nurse line.
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <!-- Calming Confirmation Success Modal -->
+  <div class="fixed inset-0 bg-slate-900/60 backdrop-blur-sm z-50 hidden items-center justify-center p-6" id="success-modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+    <div class="bg-white rounded-3xl p-8 max-w-md w-full shadow-2xl relative space-y-6 text-center animate-fade-in-up">
+      <!-- Success Icon -->
+      <div class="w-16 h-16 rounded-full bg-teal-50 text-brand-teal flex items-center justify-center mx-auto shadow-sm">
+        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+        </svg>
+      </div>
+
+      <div class="space-y-2">
+        <h4 class="text-2xl font-bold text-brand-navy" id="modal-title">Request Received</h4>
+        <p class="text-sm text-brand-slate leading-relaxed font-light" id="modal-details-text">
+          <!-- Text dynamically loaded by app.js -->
+        </p>
+      </div>
+
+      <!-- Action Button -->
+      <button class="w-full bg-brand-teal hover:bg-teal-700 text-white font-semibold py-3.5 rounded-xl transition-all duration-300 shadow" id="close-modal-btn">
+        Close Window
+      </button>
+    </div>
+  </div>
+
+  <!-- Minimalist Footer -->
+  <footer class="bg-slate-900 text-slate-400 border-t border-slate-800">
+    <div class="max-w-7xl mx-auto px-6 py-12 space-y-10">
+      
+      <!-- Footer details grid -->
+      <div class="grid grid-cols-1 md:grid-cols-12 gap-8 items-start">
+        
+        <!-- About column -->
+        <div class="md:col-span-5 space-y-4">
+          <div class="flex items-center gap-3">
+            <div class="bg-brand-teal/20 text-brand-mint p-2 rounded-lg">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364-6.364l-.707.707M6.343 17.657l-.707.707m0-12.728l.707.707m12.728 12.728l.707-.707M12 8a4 4 0 100 8 4 4 0 000-8z"></path></svg>
+            </div>
+            <span class="text-white font-bold tracking-tight">Lumina Dental Care</span>
+          </div>
+          <p class="text-sm font-light leading-relaxed max-w-sm">
+            State-of-the-art diagnostic dental systems with a patient-first methodology for comprehensive, stress-free clinical care.
+          </p>
+        </div>
+
+        <!-- Links column -->
+        <div class="md:col-span-3 space-y-3">
+          <h4 class="text-white text-xs font-semibold uppercase tracking-wider">Quick Navigation</h4>
+          <ul class="space-y-2 text-sm font-light">
+            <li><a href="#services" class="hover:text-white transition-colors duration-300">Our Services</a></li>
+            <li><a href="#about" class="hover:text-white transition-colors duration-300">About the Practice</a></li>
+            <li><a href="#testimonials" class="hover:text-white transition-colors duration-300">Patient Testimonials</a></li>
+            <li><a href="#contact" class="hover:text-white transition-colors duration-300">Request Appointment</a></li>
+          </ul>
+        </div>
+
+        <!-- Warning Callout Box -->
+        <div class="md:col-span-4 bg-red-950/30 border border-red-900/40 p-5 rounded-2xl space-y-2 text-xs">
+          <span class="text-red-400 font-bold uppercase tracking-wider block">Dental Emergency Alert</span>
+          <p class="text-slate-300 leading-relaxed font-light">
+            If you are experiencing severe dental trauma, heavy bleeding, or a swelling that compromises breathing, please call 911 immediately or visit the nearest emergency room.
+          </p>
+        </div>
+
+      </div>
+
+      <!-- Copyright and Back to top block -->
+      <div class="pt-8 border-t border-slate-800 flex flex-col sm:flex-row items-center justify-between gap-4">
+        <p class="text-xs font-light text-slate-500" id="copyright">
+          &copy; <span id="current-year">2026</span> Lumina Dental Care. All rights reserved. Registered Professional Dental Practice.
+        </p>
+        <script>
+          // Set dynamic year in copyright
+          document.getElementById('current-year').textContent = new Date().getFullYear();
+        </script>
+        <a href="#" class="text-xs text-slate-500 hover:text-teal-400 transition-colors duration-300 inline-flex items-center gap-1.5" id="back-to-top-footer">
+          Back to top
+          <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 10l7-7m0 0l7 7m-7-7v18"></path></svg>
+        </a>
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- Floating Back to Top Button -->
+  <button class="fixed bottom-6 right-6 bg-brand-teal hover:bg-teal-700 text-white p-3 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 transform translate-y-4 opacity-0 pointer-events-none z-30" id="back-to-top" aria-label="Scroll to top of page">
+    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 10l7-7m0 0l7 7"></path>
+    </svg>
+  </button>
+
+  <!-- Application JS -->
+  <script src="app.js"></script>
+</body>
+</html>
